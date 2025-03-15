@@ -4,5 +4,7 @@ const filepath = 'data.json';
 
 let jsonData = JSON.parse(fs.readFileSync(filepath,'utf-8'));
 
-function add("")
+function add(task) =>{
+    
+}
 
