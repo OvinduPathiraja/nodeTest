@@ -8,3 +8,4 @@ function add(task){
     fs.writeFileSync(filepath, task )
 }
 
+add("test")
