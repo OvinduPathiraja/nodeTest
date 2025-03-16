@@ -3,6 +3,6 @@ const readline = require('readline')
 
 const filepath = 'data.json';
 
-const data = fs.readFileSync(filepath)
+const data = fs.readFileSync(filepath, '')
 
 fs.writeFileSync(filepath, "task" );
