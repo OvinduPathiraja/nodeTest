@@ -1,6 +1,6 @@
 [{
     "name": "Ovindu",
-    age: 25,
-    profession: "Software Developer"
+    "age": 25,
+    "profession": "Software Developer"
   }
 ]
