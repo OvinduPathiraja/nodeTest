@@ -1,10 +1,32 @@
 const fs = require('fs');
-// const readline = require('readline');
+const jsonUpdate = require('json-update');
 
-const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
+const filepath = 'data.json'
 
-data.push({name:"ovindu", age:"22"})
+let data;
 
-fs.writeFileSync('data.json', JSON.stringify(data, null, 2),'utf-8');
+try{
+    data = JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+}catch(err){
+    console.error(err);
+    return;
+}
+
+async function addtask(){
+    
+    data.push({name:"sumu", age:"25"});
+    
+    fs.writeFileSync(filepath, JSON.stringify(data, null, 2),'utf-8'),(err)=>{
+        if(err){
+            console.error("write error "+err);
+        }
+    };
+}
+
+async function updatetask() {
+    
+}
+
+addtask();
 
 
