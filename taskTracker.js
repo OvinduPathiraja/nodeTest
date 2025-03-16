@@ -5,6 +5,6 @@ const data = JSON.parse(fs.readFileSync(data.json, 'utf-8'));
 
 data.push({name:"ovindu", age:"22"})
 
-fs.writeFileSync()
+fs.writeFileSync(data.)
 
 fs.writeFileSync(filepath, "task" );
