@@ -1,32 +1,48 @@
 const fs = require('fs');
-const jsonUpdate = require('json-update');
 
 const filepath = 'data.json'
 
-let data;
-
-try{
-    data = JSON.parse(fs.readFileSync(filepath, 'utf-8'));
-}catch(err){
-    console.error(err);
-    return;
+async function loaddata(){
+    try{
+        let data = await JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+        return data;
+    }catch(err){
+        console.error(err);
+        return [];
+    }
 }
 
-async function addtask(){
+async function savetask(data){
     
-    data.push({name:"sumu", age:"25"});
-    
-    fs.writeFileSync(filepath, JSON.stringify(data, null, 2),'utf-8'),(err)=>{
-        if(err){
-            console.error("write error "+err);
+    try{
+        fs.writeFile(filepath, JSON.stringify(data, null, 2),'utf-8');
+    }catch(err){
+        console.error(err);
+    }
+}
+
+async function updatetask(id,newname) {
+
+    let data = await loaddata();
+    let status = false;
+
+    data = data.map(item => {
+        if(item.id === id){
+            status = true;
+            return { ...item, name: newname};
         }
-    };
-}
+        return item;
+    })
 
-async function updatetask() {
+    if(status === true){
+        await savetask(data);
+        console.log("test"+data)
+    }
     
 }
 
-addtask();
+// savetask();
+
+updatetask(1,"john");
 
 
