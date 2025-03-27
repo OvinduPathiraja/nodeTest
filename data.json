@@ -1,16 +1,12 @@
 [
   {
     "id": "1",
-    "name": "sumu",
-    "age": "25"
+    "task:":"Clean room",
+    "status":"not started"
   },
   {
     "id": "2",
-    "name": "sumu",
-    "age": "25"
-  },
-  {
-    "name": "sumu",
-    "age": "25"
+    "task:":"",
+    "status":"not started"
   }
 ]

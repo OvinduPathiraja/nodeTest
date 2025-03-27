@@ -15,7 +15,7 @@ async function loaddata(){
 async function savetask(data){
     
     try{
-        fs.writeFile(filepath, JSON.stringify(data, null, 2),'utf-8');
+        await fs.promises.writeFile(filepath, JSON.stringify(data, null, 2),'utf-8');
     }catch(err){
         console.error(err);
     }
@@ -29,6 +29,7 @@ async function updatetask(id,newname) {
     data = data.map(item => {
         if(item.id === id){
             status = true;
+            console.log("test "+item.id)
             return { ...item, name: newname};
         }
         return item;
@@ -43,6 +44,6 @@ async function updatetask(id,newname) {
 
 // savetask();
 
-updatetask(1,"john");
+updatetask("1","john");
 
 
