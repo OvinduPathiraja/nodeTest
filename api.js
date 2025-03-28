@@ -17,12 +17,15 @@ async function finddata(val){
 }
 
 
-finddata("02")
 
-async function updateData(val){
+async function updateData(val, update){
     Object.entries(data).forEach(([key, item]) =>{
         if(key === val){
-            data []
+            data[key] = {value:update}
         }
     })
 }
+
+updateData("01","val3")
+
+finddata("01")
