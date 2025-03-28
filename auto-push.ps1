@@ -1,6 +1,6 @@
 # PowerShell script to commit and push every 5 minutes
 
-$repoPath = "C:\path\to\your\repo"  # Change this to your repository path
+$repoPath = "C:\Users\codic\Downloads\Node-Test"  # Change this to your repository path
 $branch = "main"  # Change this to your branch name
 
 Write-Host "Starting auto-commit script. Commits every 5 minutes..."
