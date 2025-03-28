@@ -26,6 +26,12 @@ async function updateData(val, update){
     })
 }
 
-updateData("01","val3")
+async function updateData2(val, update) {
+    if(data[val]){
+        data[val].value = update
+    }
+}
+
+updateData2("01","val3")
 
 finddata("01")
